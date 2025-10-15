@@ -17,11 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .import views# importar archivo
-
+from django.conf import settings# 07/10
+from django.conf.urls.static import static#importar los archivos staticos 07/10
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name='inicio'), # cambio
     
-
-]
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)#07/10

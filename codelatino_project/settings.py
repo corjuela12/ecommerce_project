@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'categorias',#cambio
     'custom_auth',#cambio
+    'tienda',#cambio
     
 ]
 
@@ -83,10 +84,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'codelatino_project.wsgi.application'
 
-# ---------------------------------------------------
+
 # 🔐 Modelo de usuario personalizado
 # ---------------------------------------------------
 AUTH_USER_MODEL = 'custom_auth.Profile'
+# ---------------------------------------------------
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -121,9 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
@@ -157,6 +159,9 @@ JAZZMIN_SETTINGS = {
     "site_brand": "codelatino",
     "welcome_sign": "Bienvenido al panel de administración",
     "copyright": "Ecommerce Mitchell",
-
 }
+
+#cambio
+MEDIA_URL = '/media/'  # URL base para archivos multimedia
+MEDIA_ROOT = BASE_DIR / 'media'  # Ruta absoluta donde se guardan los archivos multimedia
 

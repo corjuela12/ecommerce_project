@@ -2,7 +2,9 @@
 from django.contrib import admin
 from .models import Profile
 
-@admin.register(Profile)
+admin.site.register(Profile)# ver usuario normales
 
-class ProfileAdmin(admin.ModelAdmin):#cambio propio
-    list_display = ('email', 'username', 'name', 'lastname', 'is_active', 'is_staff')
+#@admin.register(Profile)
+
+# class ProfileAdmin(admin.ModelAdmin):#cambio propio
+#     list_display = ('email', 'username', 'name', 'lastname', 'is_active', 'is_staff')
