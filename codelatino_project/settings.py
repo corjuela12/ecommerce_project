@@ -51,8 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'categorias',#cambio
     'custom_auth',#cambio
-    'tienda',#cambio
     'home',#cambio
+    'tienda',#cambio
     
 ]
 
