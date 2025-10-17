@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'categorias',#cambio
     'custom_auth',#cambio
     'tienda',#cambio
+    'home',#cambio
     
 ]
 
@@ -135,13 +136,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-#cambio
+#----------------------------------------------------------------------------------
+# URL base desde donde se servirán los archivos estáticos en el navegador.
+# Ejemplo: <img src="/static/imagen.png">
 STATIC_URL = 'static/'
-STATICFILES_DIRS= [
-    BASE_DIR / 'codelatino_project/static'
-]
 
-STATIC_ROOT=BASE_DIR /'static'#cambio
+#----------------------------------------------------------------------------------
+# Directorios adicionales donde Django buscará archivos estáticos.
+# (Solo se usa si tienes una carpeta global de estáticos fuera de las apps)
+# En este proyecto no se usa porque cada app maneja sus propios archivos estáticos.
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'codelatino_project/static'
+# ]
+
+#----------------------------------------------------------------------------------
+# Carpeta donde Django recopila todos los archivos estáticos
+# cuando ejecutas el comando 'python manage.py collectstatic'
+# (se usa principalmente en producción, no en desarrollo)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
