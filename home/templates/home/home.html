@@ -5,57 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</i></title>
-    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22">
-                        <path d="m274-274-128-70 42-42 100 14 156-156-312-170 56-56 382 98 157-155q17-17 42.5-17t42.5 17q17 17 17 42.5T812-726L656-570l98 382-56 56-170-312-156 156 14 100-42 42-70-128Z"/>
-                    </svg>
+    {% include "home/navbar.html" %}
+    <div class="row">
+        {% for elemento in servicios_disponible %}
+            <div class="col-md-3">
+                <div class="card card-product-grid">
+                    <a href="#" class="img-wrap">
+                        <img src="{{elemento.imagen.url}}" alt="">
+                    </a>
+                    <figcaption class="info-wrap">
+                        <a href="#" class="titulo-servicio">
+                            {{elemento.nombre}}
+                        </a>
+                        <div class="price mt-1">
+                            ${{elemento.costo}}
+                        </div>
+                        <p class="descripcion-servicio">
+                            {{elemento.descripcion}}
+                        </p>
+                    </figcaption>
                 </div>
-                <span class="logo-text">CafeTour</span>
-            </a>
-
-            <div class="search-bar">
-                <select class="search-select" id="searchCategory">
-                    <option value="all">Todas las categorías</option>
-                    <option value="electronics">Electrónica</option>
-                    <option value="fashion">Moda</option>
-                    <option value="home">Hogar</option>
-                    <option value="sports">Deportes</option>
-                    <option value="books">Libros</option>
-                    <option value="toys">Juguetes</option>
-                </select>
-                <input type="text" class="search-input" placeholder="¿Qué estás buscando?">
-                <button class="search-btn">
-                    <span class="search-icon">🔍</span>
-                </button>
             </div>
+        {% endfor %}
 
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="#tienda" class="nav-link">Tienda</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                <div class="nav-buttons">
-                    <a href="#login" class="btn btn-login">Login</a>
-                    <a href="#registro" class="btn btn-register">Registro</a>
-                </div>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="content">
-        <h1>Bienvenido a LatinShop</h1>
-        <p>Tu ecommerce moderno con diseño responsive y profesional</p>
     </div>
 
     <script src="{% static 'home/js/home.js' %}"></script>
