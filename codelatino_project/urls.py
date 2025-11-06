@@ -23,6 +23,7 @@ from django.conf.urls.static import static#importar los archivos staticos 07/10
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', views.inicio, name='inicio'), # cambio
-    path("",include("home.urls"))
+    path("",include("home.urls")),
+    path("tienda/",include("tienda.urls")),
     
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)#07/10

@@ -1,18 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/estilos.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
+    <title>Document</title>
 </head>
 <body>
-    {% include "home/navbar.html" %}
+    
+    <p>hola saldre adelante y  <b>de la mano de Dios</b> siempre</p>
+
+    <p>hay que <span style="color: red">cargar la cruz</span> todos los dias</p>
+    <span class="mr-md-auto">hay <b>{{contar_servicios}}</b> resultados</span>
+
     <div class="row">
-        {% for elemento in servicios_disponible %}
+        {% for elemento in servicios_tienda %}
             <div class="col-md-3">
                 <div class="card card-product-grid">
                     <a href="#" class="img-wrap">
@@ -32,8 +34,7 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
+    </div>    
 
-    <script src="{% static 'home/js/home.js' %}"></script>
 </body>
 </html>

@@ -16,3 +16,17 @@ function toggleMenu() {
                 }
             });
         });
+
+
+document.getElementById('searchCategory').addEventListener('change', function() {
+    const value = this.value;
+    const url_all = this.dataset.allServices;
+    if (value === 'all') {
+        // redirige al home (todas las categorías)
+        window.location.href = url_all;
+    } else {
+        // redirige a la categoría seleccionada
+        window.location.href = value;
+    }
+});
+

@@ -13,14 +13,21 @@
         </a>
 
         <div class="search-bar">
-            <select class="search-select" id="searchCategory">
+            <select class="search-select" id="searchCategory" data-all-services="{% url 'tienda:enlace' %}">
                 <option value="all">Todas las categorías</option>
+                {% for category in links %}
+                    <option value="{{ category.get_url }}">{{ category.nombre_categoria }}</option>
+                {% endfor %}
+                
+                
+                
+                <!-- <option value="all">Todas las categorías</option>
                 <option value="electronics">Electrónica</option>
                 <option value="fashion">Moda</option>
                 <option value="home">Hogar</option>
                 <option value="sports">Deportes</option>
                 <option value="books">Libros</option>
-                <option value="toys">Juguetes</option>
+                <option value="toys">Juguetes</option> -->
             </select>
             <input type="text" class="search-input" placeholder="¿Qué estás buscando?">
             <button class="search-btn">
@@ -36,7 +43,7 @@
 
         <ul class="nav-menu" id="navMenu">
             <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-            <li><a href="#tienda" class="nav-link">Tienda</a></li>
+            <li><a href="{% url 'tienda:enlace' %}"  class="nav-link">Tienda</a></li>
             <li><a href="#contacto" class="nav-link">Contacto</a></li>
             <div class="nav-buttons">
                 <a href="#login" class="btn btn-login">Login</a>
