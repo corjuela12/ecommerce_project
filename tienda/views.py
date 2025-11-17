@@ -27,5 +27,13 @@ def tienda(request, categoria_slug=None):
         "servicios_tienda":servicios_tienda,
         "contar_servicios":contar_servicios,
     }
-
     return render(request, 'tienda/tienda_repo.html',context)
+
+
+def detalles_servicios(request, categoria_slug, servicio_slug):
+    servicio = get_object_or_404(Servicio, categoria__slug=categoria_slug, slug=servicio_slug)
+    
+    context = {
+        "servicio": servicio,
+    }
+    return render(request, 'tienda/service.html', context)
