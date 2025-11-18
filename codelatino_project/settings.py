@@ -26,17 +26,18 @@ SECRET_KEY = 'django-insecure-ze_3(st@$y18$_!#h54_032u$l@tjf)ldgqsbqr1vhnp&bat3w
 DEBUG = True
 
 # Esta lista define los hosts permitidos en Django -CAMBIO-
-ALLOWED_HOSTS = ['darlena-contemplable-gaily.ngrok-free.dev', # dominio de ngrok
-                 'localhost', # para pruebas locales
-                 '127.0.0.1',# IP local
-                 '.trycloudflare.com'# con punto acepta todos los dominios con clouflare.com
+ALLOWED_HOSTS = ['*'# aceptar cualquier servidor
+#'darlena-contemplable-gaily.ngrok-free.dev', # dominio de ngrok
+#                  'localhost', # para pruebas locales
+#                  '127.0.0.1',# IP local
+#                  '.trycloudflare.com'# con punto acepta todos los dominios con clouflare.com
 ]
 
 # Dominios externos de confianza -CAMBIO-
 # usados en peticiones POST (CSRF)
-CSRF_TRUSTED_ORIGINS = [
-    'https://darlena-contemplable-gaily.ngrok-free.dev'
-]
+# CSRF_TRUSTED_ORIGINS = [ #comentada para produccion
+#     'https://darlena-contemplable-gaily.ngrok-free.dev'
+# ]
 
 
 # Application definition
